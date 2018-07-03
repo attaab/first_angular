@@ -10,27 +10,33 @@ module.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'app/views/directory.html',
             controller: 'moduleController'
         })
+        .when('/profile', {
+            templateUrl: 'app/views/profile.html',
+            controller: 'moduleController'
+        })
         .otherwise({
             redirectTo: "/home"
         });
 }])
 
 
-    /*creating custom directive*/
+
+    /*creating custom directive for random developer*/
         module.directive('randomPerson', [function() {
             return {
                 restrict: 'E',
                 scope: {
                     people: '=',
+                    length: '=',
                     title: '='
                 },
                 templateUrl: 'app/views/random.html',
                 controller: function ($scope) {
-                    $scope.random = Math.floor(Math.random() * 5);
+                    $scope.random = Math.floor(Math.random() * $scope.length);
                 }
             };
         }]);
-    /*End of creating custom directive */
+    /*End of creating custom directive  for random developer*/
 
 module.controller('moduleController', ['$scope','$http', function ($scope, $http) {
 
@@ -56,30 +62,38 @@ module.controller('moduleController', ['$scope','$http', function ($scope, $http
     };
 
     $scope.people = [{
-        name : "Doro",
+        name : "Ezekiel Saturday",
+        img: "content/img/ezekiel.jpg",
         developer:"Full stack developer",
         worth:48000000000,
         belt :"black",
         available :true
         },{
-            name :"Damilare",
+            name :"Jeff Bezos",
+            img: "content/img/jeff.jpg",
             developer :"Front end developer",
             worth :5000,
             belt :"green",
             available :true
         },{
-            name:"frank",
+            name:"Mark Zukerberg",
+            img: "content/img/mark.jpg",
             developer:"Full stack Developer",
             "worth":10000,
             "belt":"yellow",
             "available":true
         },{
-            name:"kayode",
+            name:"Elon Musk",
+            img: "content/img/elon.jpg",
             developer:"Back end developer",
             worth :30000,
             belt:"orange",
-            available :false
+            available : true
     }]
+
+    /*binding the length of the array to th scope object*/
+    $scope.length = $scope.people.length;
+
 }]);
 
 /*The Arrayed object that holds $scope.people innformation*/

@@ -2,10 +2,11 @@
     <p class="profile">
         <h4>{{title}}</h4>
         <p>
+            <img ng-src="{{people[random].img}}"/><br/>
           Name:   {{people[random].name}}<br/>
           Stack:  {{people[random].developer}}
         </p>
-        <p>Fixed Salary: {{people[random].worth}}</p>
+        <p>Fixed Salary: {{people[random].worth | currency}}</p>
         <a href="#!/developer" class="profile-link">view profile</a>
     </p>
 </div>
