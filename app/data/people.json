@@ -1,0 +1,25 @@
+[{
+    "name":"Doro",
+    "developer":"Full stack developer",
+    "worth":48000000000,
+    "belt":"black",
+    "available":true
+    },{
+        "name":"Damilare",
+        "developer":"Front end developer",
+        "worth":5000,
+        "belt":"green",
+        "available":true
+    },{
+        "name":"frank",
+        "developer":"Full stack Developer",
+        "worth":10000,
+        "belt":"yellow",
+        "available":true
+    },{
+        "name":"kayode",
+        "developer":"Back end developer",
+        "worth":30000,
+        "belt":"orange",
+        "available":false
+}]
